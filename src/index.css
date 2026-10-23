@@ -109,3 +109,161 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+:root {
+  --lcn-red: #b3261e;
+  --lcn-red-dark: #8f1d17;
+  --lcn-green: #3d5a2a;
+  --lcn-cream: #fff8e7;
+  --lcn-ink: #2b2118;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--lcn-ink);
+}
+
+/* ---------- Fondo de Snoopy (inicio) ---------- */
+.lcn-home {
+  min-height: 100vh;
+  background: var(--lcn-cream) url('/img/fondo.jpg') center / cover fixed no-repeat;
+}
+
+.lcn-section { padding: 2.5rem 0; }
+
+/* Panel translúcido: deja ver el fondo pero mantiene el texto legible */
+.lcn-panel {
+  background: rgba(255, 248, 231, 0.9);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 8px 28px rgba(60, 40, 20, 0.15);
+  backdrop-filter: blur(2px);
+}
+
+.lcn-section-title { text-align: center; margin-bottom: 1.5rem; }
+.lcn-section-title span {
+  text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.8rem; font-weight: 600; color: var(--lcn-red);
+}
+.lcn-section-title h2 { font-family: 'Amatic SC', cursive; font-size: 3rem; font-weight: 700; color: var(--lcn-green); margin: 0; }
+
+/* ---------- Navbar ---------- */
+.lcn-navbar { background: rgba(255, 248, 231, 0.96); box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12); }
+.lcn-logo-nav { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+.lcn-brand { font-family: 'Amatic SC', cursive; font-size: 1.9rem; font-weight: 700; color: var(--lcn-green); }
+.lcn-navbar .nav-link { color: var(--lcn-ink); font-weight: 500; }
+.lcn-navbar .nav-link:hover { color: var(--lcn-red); }
+.lcn-saludo { color: var(--lcn-green) !important; font-weight: 700 !important; }
+.lcn-btn-cart { background: var(--lcn-green); color: #fff; }
+.lcn-btn-cart:hover { background: #2f471f; color: #fff; }
+.lcn-btn-cart .badge { background: var(--lcn-red); }
+
+/* ---------- Hero ---------- */
+.lcn-hero { padding: 3rem 0 1.5rem; }
+.lcn-hero .lcn-panel h1 { font-family: 'Amatic SC', cursive; font-size: clamp(2.6rem, 6vw, 4rem); font-weight: 700; color: var(--lcn-green); line-height: 1.05; }
+.lcn-kicker { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem; font-weight: 600; color: var(--lcn-red); margin-bottom: 0.5rem; }
+.lcn-hero-logo { max-height: 420px; border-radius: 50%; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); }
+
+/* ---------- Botones ---------- */
+.lcn-btn-primary { background: var(--lcn-red); color: #fff; border: none; }
+.lcn-btn-primary:hover, .lcn-btn-primary:focus { background: var(--lcn-red-dark); color: #fff; }
+.lcn-btn-outline { border: 2px solid var(--lcn-green); color: var(--lcn-green); background: transparent; }
+.lcn-btn-outline:hover { background: var(--lcn-green); color: #fff; }
+.lcn-icono { font-size: 1.8rem; color: var(--lcn-red); }
+
+/* ---------- Menú ---------- */
+.lcn-tab { color: var(--lcn-green); font-weight: 600; border: 2px solid var(--lcn-green); }
+.lcn-tab.active { background: var(--lcn-green) !important; color: #fff !important; }
+.lcn-card { border: 0; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12); transition: transform 0.2s; }
+.lcn-card:hover { transform: translateY(-4px); }
+.lcn-card-img-btn { border: 0; padding: 0; background: none; display: block; width: 100%; }
+.lcn-card .card-img-top { height: 200px; object-fit: cover; }
+.lcn-precio { color: var(--lcn-red); }
+
+/* ---------- Modal / toast ---------- */
+.lcn-modal { border-radius: 1rem; overflow: hidden; }
+.lcn-cerrar { position: absolute; top: 0.75rem; right: 0.75rem; z-index: 2; background-color: #fff; border-radius: 50%; padding: 0.6rem; }
+.lcn-detalle-img { object-fit: cover; min-height: 240px; }
+.lcn-toast {
+  position: fixed; bottom: 1.25rem; left: 50%; transform: translateX(-50%); z-index: 2000;
+  background: var(--lcn-green); color: #fff; padding: 0.75rem 1.25rem; border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3); max-width: 90vw; text-align: center;
+}
+.offcanvas-backdrop { z-index: 1040; }
+.offcanvas { z-index: 1045; }
+
+.lcn-footer { background: var(--lcn-green); color: #fff; }
+
+@media (max-width: 575.98px) {
+  .lcn-panel { padding: 1.25rem; }
+  .lcn-section-title h2 { font-size: 2.4rem; }
+}
+
+/* ============================================================
+   Login y Registro: se mantiene el estilo original (tarjeta de
+   vidrio sobre degradado animado), ahora acotado a .auth-page
+   para que no afecte al resto del sitio.
+   ============================================================ */
+.auth-page {
+  min-height: 100vh;
+  display: flex; justify-content: center; align-items: center;
+  padding: 16px;
+  background: linear-gradient(145deg, #ff6b6b, #f7b267, #6a4c93, #4ecdc4);
+  background-size: 300% 300%;
+  animation: gradientMove 10s ease infinite;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+}
+@keyframes gradientMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+.auth-page .card-box {
+  width: 100%; max-width: 450px; padding: 35px; border-radius: 20px;
+  background: rgba(0, 0, 0, 0.25); backdrop-filter: blur(12px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.35);
+}
+.auth-page .login-logo { width: 150px; height: 150px; object-fit: cover; border-radius: 50%; }
+.auth-page h3 { text-align: center; font-weight: 800; font-size: 28px; margin: 12px 0 20px; text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4); }
+.auth-page .form-label { font-weight: 700; font-size: 15px; color: #fff; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); margin-bottom: 6px; }
+.auth-page .input-group-text { background: rgba(255, 255, 255, 0.4); border: none; color: #fff; font-size: 18px; }
+.auth-page .form-control { background: rgba(255, 255, 255, 0.25); color: #fff; border: none; font-weight: 600; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); }
+.auth-page .form-control::placeholder { color: #fff; opacity: 1; }
+.auth-page .form-control:focus { background: rgba(255, 255, 255, 0.35); color: #fff; box-shadow: 0 0 8px rgba(255, 255, 255, 0.35); }
+.auth-page .form-control.is-invalid { background-image: none; box-shadow: inset 0 0 0 2px #ffd1d1; }
+.auth-page .invalid-feedback { display: block; color: #fff; background: rgba(150, 20, 20, 0.7); padding: 4px 10px; border-radius: 0 0 8px 8px; font-weight: 600; }
+.auth-page .btn-main {
+  margin-top: 15px; width: 100%; padding: 12px; border-radius: 10px; border: none;
+  background: linear-gradient(135deg, #ff6b6b, #f7b267, #4ecdc4);
+  font-size: 17px; font-weight: 700; color: #fff; transition: 0.2s ease;
+}
+.auth-page .btn-main:hover { transform: translateY(-2px); box-shadow: 0 9px 20px rgba(0, 0, 0, 0.25); }
+.auth-page p, .auth-page a { color: #fff; text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); }
+@media (max-width: 480px) {
+  .auth-page { align-items: flex-start; }
+  .auth-page .card-box { margin-top: 20px; padding: 20px 18px; border-radius: 16px; }
+  .auth-page h3 { font-size: 22px; }
+}
+
+/* ---------- Encabezado según template ---------- */
+.lcn-buscador { flex: 1 1 260px; max-width: 420px; margin: 0 auto; }
+.lcn-navbar .nav-link { padding: 0.3rem 0.7rem; }
+.lcn-navbar .dropdown-toggle { border: 0; text-decoration: none; }
+.lcn-navbar .dropdown-menu { position: absolute; }
+.lcn-navbar .lcn-btn-cart { border-radius: 0.4rem; }
+
+/* ---------- Carrusel ---------- */
+.lcn-carousel { border-radius: 1rem; overflow: hidden; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25); }
+.lcn-slide-img { height: 300px; object-fit: cover; filter: brightness(0.6); }
+.lcn-slide-caption {
+  position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center; color: #fff; padding: 0 3rem; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+.lcn-slide-caption h2 { font-family: 'Amatic SC', cursive; font-size: clamp(2.2rem, 6vw, 3.6rem); font-weight: 700; }
+.lcn-carousel .carousel-control-prev, .lcn-carousel .carousel-control-next { background: none; border: 0; }
+
+/* ---------- Categorías y ofertas ---------- */
+.lcn-categoria { cursor: pointer; padding: 0; }
+.lcn-categoria .card-img-top { height: 120px; object-fit: cover; }
+.lcn-badge-oferta { position: absolute; top: 0.6rem; left: 0.6rem; z-index: 2; background: var(--lcn-red); font-size: 0.9rem; }
+
+@media (max-width: 575.98px) {
+  .lcn-slide-img { height: 220px; }
+}
