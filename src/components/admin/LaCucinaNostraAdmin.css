@@ -1,0 +1,220 @@
+/* ==========================================================================
+   ESTILOS GENERALES Y ESTRUCTURA BASE
+   ========================================================================== */
+body {
+  background-color: #f4f6f9;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Barra superior oscura */
+.top-header {
+  background-color: #1f2427;
+  color: #ffffff;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Layout del panel */
+.admin-container {
+  min-height: calc(100vh - 50px);
+}
+
+/* ==========================================================================
+   SIDEBAR (MENÚ LATERAL)
+   ========================================================================== */
+.sidebar {
+  background-color: #ffffff;
+  border-right: 1px solid #e3e6f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px 12px;
+  min-height: calc(100vh - 50px);
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-link-custom {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  color: #495057;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.92rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.nav-link-custom:hover {
+  background-color: #f1f3f5;
+  color: #212529;
+}
+
+.nav-link-custom.active {
+  background-color: #0d6efd;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(13, 110, 253, 0.25);
+}
+
+.sidebar-divider {
+  border-top: 1px solid #e9ecef;
+  margin: 15px 0;
+}
+
+/* Botones inferiores del sidebar */
+.sidebar-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-sidebar-store {
+  background-color: #212529;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.btn-sidebar-store:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.btn-sidebar-logout {
+  background-color: #dc3545;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.btn-sidebar-logout:hover {
+  background-color: #bb2d3b;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   ÁREA DE CONTENIDO PRINCIPAL
+   ========================================================================== */
+.main-content {
+  padding: 24px 32px;
+}
+
+.page-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 2px;
+}
+
+.page-subtitle {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+}
+
+/* Tarjetas de métricas principales (KPIs) */
+.kpi-card {
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.kpi-card-blue {
+  background-color: #0d6efd;
+}
+
+.kpi-card-green {
+  background-color: #198754;
+}
+
+.kpi-card-yellow {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.kpi-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.kpi-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-top: 4px;
+}
+
+.kpi-footer {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  margin-top: 18px;
+}
+
+/* Módulos en cuadrícula */
+.module-card {
+  border: 1px solid #e3e6f0;
+  border-radius: 10px;
+  background-color: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.module-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.module-card-body {
+  padding: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.module-icon {
+  width: 44px;
+  height: 44px;
+  color: #0d6efd;
+  margin-bottom: 12px;
+}
+
+.module-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 8px;
+}
+
+.module-description {
+  font-size: 0.85rem;
+  color: #6c757d;
+  line-height: 1.4;
+  margin: 0;
+}
