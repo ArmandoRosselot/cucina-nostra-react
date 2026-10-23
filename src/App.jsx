@@ -3,6 +3,12 @@ import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
+import { Route, Routes } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext.jsx';
+import { CartProvider } from './context/CartContext.jsx';
+import Home from './pages/Home.jsx';
+import Login from './pages/Login.jsx';
+import Register from './pages/Register.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -112,6 +118,16 @@ function App() {
           </ul>
         </div>
       </section>
+      <AuthProvider>
+      <CartProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </CartProvider>
+    </AuthProvider>
 
       <div className="ticks"></div>
       <section id="spacer"></section>
